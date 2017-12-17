@@ -1,0 +1,172 @@
+
+/*背景色绿色渐变*/
+body{
+    background-image: linear-gradient(to right, #cce6c9 0%, white 100%);
+  }
+  
+  /*整个图案水平和垂直居中*/
+  #wrap {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 35%;
+    width: 220px;
+    height: 130px;
+  }
+  
+  /*手掌和四个手指*/
+  #PraiseButton {
+    position:absolute;
+    left:75px;
+    width:125px;
+    height:130px;
+    background:#ffcaa4;
+    border-radius:60px 40px 40px 40px;
+  }
+  
+  
+  #PraiseButton:before, #PraiseButton:after {
+    display:block;
+    content:'';
+    position:absolute;
+  }
+  
+  #PraiseButton:before {
+    width:80px;
+    height:30px;
+    top:35px;
+    left:60px;
+    border-radius:25px 25px 25px 25px;
+    background-image:linear-gradient(to right, #ffcaa4 15px, #efdbcd 40px, #ffcaa4 100px);
+    -webkit-box-reflect: above 1px;
+    box-reflect: above 1px;
+  }
+  
+  #PraiseButton:after {
+    width:80px;
+    height:30px;
+    top:66px;
+    left:55px;
+    border-radius:25px 25px 25px 25px;
+    background-image:linear-gradient(to right, #ffcaa4 15px, #efdbcd 40px, #ffcaa4 100px);
+    -webkit-box-reflect: below 1px;
+    box-reflect: below 1px;
+  }
+  
+  
+  /*手腕和大拇指*/
+  #Thumb {
+    position:absolute;
+    top:30px;
+    width:90px;
+    height:80px;
+    background:#ffcaa4;
+  }
+  
+  
+  #Thumb:before {
+    display:block;
+    content:'';
+    position:absolute;
+    width:110px;
+    height:30px;
+    top:-55px;
+    left:73px;
+    transform: rotateZ(-65deg);
+    border-radius:25px 25px 235px 255px;
+    background-image:linear-gradient(to right, #ffcaa4 60px, #efdbcd 80px, #ffcaa4 100px);
+    /*border:1px solid #000;*/
+  }
+  
+  
+  /*+1的弹出效果*/
+  .hide {
+    display: none;
+  }
+  
+  /*动态添加和删除num类名，增加这个动画效果哦*/
+  .num {
+    display: block !important;
+    -webkit-animation: pop 0.8s ease-in-out alternate;
+    animation: pop 0.8s ease-in-out alternate;
+    /*定义动画播放的次数*/
+    -webkit-animation-iteration-count:1;
+  
+    font-size: 40px;
+    color: #ff1177;
+    position: absolute;
+    right: -10%;
+    top: -45%;
+  }
+  
+  @-webkit-keyframes pop {
+    from{
+      opacity: 0;
+      -webkit-transform: translateY(-20px);
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
+          0 0 40px #ff1177, 0 0 70px #ff1177, 0 0 80px #ff1177, 0 0 100px #ff1177, 0 0 150px #ff1177;
+    }
+    to{
+      opacity: 1;
+      -webkit-transform: translateY(0px);
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+          0 0 30px #ff1177, 0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 75px #ff1177;
+    }
+  }
+  
+  .star{
+    margin: 300px 50%;
+    position: absolute;
+    top: -30%;
+    left: -8%;
+    display: block;
+    color: red;
+    width: 0px;
+    height: 0px;
+    z-index: 999;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid red;
+    border-left: 100px solid transparent;
+    -moz-transform: rotate(35deg);
+    -webkit-transform: rotate(35deg);
+    -ms-transform: rotate(35deg);
+    -o-transform: rotate(35deg);
+  }
+  .star:before {
+    border-bottom: 80px solid red;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -45px;
+    left: -65px;
+    display: block;
+    content: "";
+    -webkit-transform: rotate(-35deg);
+    -moz-transform: rotate(-35deg);
+    -ms-transform: rotate(-35deg);
+    -o-transform: rotate(-35deg);
+  }
+  
+  .star1 {
+    position: relative;
+    display: block;
+    color: red;
+    top: 3px;
+    left: -105px;
+    width: 0px;
+    height: 0px;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid red;
+    border-left: 100px solid transparent;
+    -webkit-transform: rotate(-70deg);
+    -moz-transform: rotate(-70deg);
+    -ms-transform: rotate(-70deg);
+    -o-transform: rotate(-70deg);
+  }
+  
+  
+  
+  
+  

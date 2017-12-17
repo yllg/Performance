@@ -1,0 +1,46 @@
+<!doctype html>
+<html >
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <title>{% block title %}My Site{% endblock %}</title>
+    {% block head %}
+    <link rel="dns-prefetch" href="//cdn.bootcss.com">
+    <script src="https://cdn.bootcss.com/lazyload/2.0.3/lazyload-min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.17.1/axios.js"></script>
+    <script src="https://cdn.bootcss.com/x-tag/1.5.11/x-tag-core.js"></script>
+    <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.js"></script>
+    <script src="https://cdn.bootcss.com/localforage/1.5.5/localforage.js"></script>
+    {% endblock %} {% block styles %}{% endblock %}
+</head>
+
+<body>
+    <a href="/index/star">跳转到星星</a>
+    <a href="/index/praise">跳转到大拇指点赞</a>
+    <div id="changeContent">{% block content %}{% endblock %}</div>
+    <script>
+        //使用pjax实现SPA
+        $(document).pjax('a', '#changeContent');
+        //
+        localforage.getItem('advertisement', function (err, value) {
+            if (value == null) {
+                $.ajax({
+                    url: '/index/adv',
+                    success: function (data) {
+                        localforage.setItem('advertisement', data).then(function(value){
+                            console.log(value);
+                        });
+                        $("body").prepend(data);
+                    }
+                });
+            } else {
+                $("body").prepend(value);
+            }
+        })
+    </script>
+</body>
+{% block script %}{% endblock %}
+
+</html>

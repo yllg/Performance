@@ -1,0 +1,5 @@
+# 忽略 node_modules/ 文件夹下的所有文件
+node_modules/
+
+
+
